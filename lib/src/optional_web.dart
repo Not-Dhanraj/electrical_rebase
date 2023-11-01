@@ -1,4 +1,3 @@
-import 'package:electrical_project/src/app.dart';
 import 'package:electrical_project/src/routing/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
