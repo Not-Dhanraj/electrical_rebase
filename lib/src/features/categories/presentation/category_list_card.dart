@@ -1,22 +1,27 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:electrical_project/src/features/categories/data/card_data.dart';
+import 'package:electrical_project/src/features/chatbot/data/chat_provider.dart';
+import 'package:electrical_project/src/features/delta_star/data/delta_to_star_provider.dart';
+import 'package:electrical_project/src/features/parallel/data/parallel_rest_data.dart';
+import 'package:electrical_project/src/features/series/data/series_rest_data.dart';
+import 'package:electrical_project/src/features/star_delta/data/star_to_delta_provider.dart';
 import 'package:electrical_project/src/routing/app_router.dart';
 import 'package:electrical_project/src/shared/bouncing_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-class CategoryList extends StatelessWidget {
+class CategoryList extends ConsumerWidget {
   final int index;
   final Alignment alignment;
-
   const CategoryList({
     Key? key,
-    required this.alignment,
     required this.index,
+    required this.alignment,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 115),
       child: Hero(
@@ -25,6 +30,11 @@ class CategoryList extends StatelessWidget {
           type: MaterialType.transparency,
           child: BouncingWidget(
             onTap: () {
+              ref.invalidate(parallelRestDataProvider);
+              ref.invalidate(seriesRestDataProvider);
+              ref.invalidate(chatDataProvider);
+              ref.invalidate(starToDeltaProvider);
+              ref.invalidate(deltaToStarProvider);
               index == 0
                   ? context.pushNamed(AppRoute.parallel.name)
                   : index == 1
