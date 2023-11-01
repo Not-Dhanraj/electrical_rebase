@@ -1,5 +1,5 @@
 name: electrical_project
-description: A new Flutter project.
+description: An electrical project of first semester students.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
@@ -36,6 +36,8 @@ dependencies:
   flutter_riverpod: ^2.4.5
   google_fonts: ^6.1.0
   http: ^1.1.0
+  flutter_markdown: ^0.6.18
+  url_launcher: ^6.2.0
 
 dev_dependencies:
   flutter_lints: ^2.0.0

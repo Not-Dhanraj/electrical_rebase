@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:electrical_project/src/features/categories/data/card_data.dart';
-import 'package:electrical_project/src/features/star_delta/presentation/star_to_delta_page.dart';
+import 'package:electrical_project/src/features/chatbot/data/word_lists.dart';
+import 'package:electrical_project/src/features/chatbot/presentation/chat_page.dart';
 import 'package:electrical_project/src/shared/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -25,7 +26,9 @@ class CategoryList extends StatelessWidget {
           child: BouncingWidget(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (cxt) {
-                return const StarToDeltaConverter();
+                return ChatScreen(
+                  title: electricalKeywords.elementAt(index),
+                );
               }));
 
               //TODO

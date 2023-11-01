@@ -12,3 +12,6 @@ const h50 = SizedBox(
 const h4 = SizedBox(
   height: 4,
 );
+const w4 = SizedBox(
+  width: 4,
+);
