@@ -124,7 +124,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                                                         .fromTheme(
                                                             Theme.of(context))
                                                     .copyWith(
-                                                        textScaleFactor: 1.1),
+                                                        textScaleFactor: 1.37),
                                                 physics: const ScrollPhysics(),
                                               ),
                                             ),
@@ -140,49 +140,50 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
                           ),
                         ),
                       )
-                    : const EmptyChatPage()),
+                    : const SingleChildScrollView(child: EmptyChatPage())),
           ),
           Positioned(
             bottom: 0,
-            child: Container(
-              margin: const EdgeInsets.symmetric(
-                horizontal: 23,
-                vertical: 15,
-              ),
-              padding: const EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 10,
-              ),
-              decoration: BoxDecoration(
-                // color: Colors.red,
-                color: Theme.of(context).cardColor,
-                borderRadius: BorderRadius.circular(40),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  SizedBox(
-                    width: MediaQuery.of(context).size.width - 107,
-                    child: TextField(
-                      maxLines: 3,
-                      minLines: 1,
-                      textAlignVertical:
-                          TextAlignVertical.center, // Align vertically
-                      controller: questionController,
-                      decoration: const InputDecoration(
-                        contentPadding: EdgeInsets.all(14),
-                        hintText: "Ask your question...",
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              child: Container(
+                margin: const EdgeInsets.symmetric(
+                  horizontal: 8,
+                  vertical: 10,
+                ),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 10,
+                ),
+                decoration: BoxDecoration(
+                  // color: Colors.red,
+                  color: Theme.of(context).cardColor,
+                  borderRadius: BorderRadius.circular(40),
+                ),
+                child: Row(
+                  children: [
+                    Flexible(
+                      child: TextField(
+                        maxLines: 3,
+                        minLines: 1,
+                        textAlignVertical:
+                            TextAlignVertical.center, // Align vertically
+                        controller: questionController,
+                        decoration: const InputDecoration(
+                          contentPadding: EdgeInsets.all(14),
+                          hintText: "Ask your question...",
+                        ),
                       ),
                     ),
-                  ),
-                  w4,
-                  IconButton(
-                      onPressed: () {
-                        chatDataModify.askQuestion(questionController.text);
-                        questionController.text = '';
-                      },
-                      icon: const Icon(Icons.send))
-                ],
+                    w4,
+                    IconButton(
+                        onPressed: () {
+                          chatDataModify.askQuestion(questionController.text);
+                          questionController.text = '';
+                        },
+                        icon: const Icon(Icons.send))
+                  ],
+                ),
               ),
             ),
           ),

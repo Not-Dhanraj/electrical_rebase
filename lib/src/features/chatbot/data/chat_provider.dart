@@ -23,6 +23,14 @@ class ChatData extends Notifier<Chat> {
         (keyword) => question.toLowerCase().contains(keyword.toLowerCase()));
   }
 
+  String modifyQues(String question) {
+    return '''Your task is to determine whether a given question belongs to the fields of physics, electrical engineering, or electronics. If the question does not belong to any of these fields, respond with a statement such as "This question appears to be related to electrical engineering or electronics." If the question does belong to one of these fields, provide a direct and accurate answer without mentioning the specific field.
+
+For example, if the question is "What is Current Density," you should provide a clear and detailed explanation of current density without indicating whether it belongs to the field of electrical engineering or physics.
+
+The question is "$question"''';
+  }
+
   Future<void> askQuestion(String question) async {
     // state.copyWith(
     // isFetching: true,
@@ -71,11 +79,13 @@ class ChatData extends Notifier<Chat> {
         shouldWarn: false,
       );
 
-      String generatedText = await requestHttp(endPoint, apiKey, question);
+      String generatedText =
+          await requestHttp(endPoint, apiKey, modifyQues(question));
 
       // Fallback in case of first api fails
       if (generatedText == 'An Error Occured') {
-        generatedText = await requestHttp(endPoint1, apiKey1, question);
+        generatedText =
+            await requestHttp(endPoint1, apiKey1, modifyQues(question));
       }
 
       // state.copyWith(answer: generatedText);
