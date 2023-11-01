@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 /// Provides data for the card view model
 class CardViewModel {
   /// Set the path of the image card
@@ -14,12 +12,9 @@ class CardViewModel {
   /// Set the middle section description
   final String description;
 
-  final VoidCallback ontap;
-
   /// Provides data for the card view model
   CardViewModel({
     required this.backdropAssetPath,
-    required this.ontap,
     required this.address,
     required this.capitol,
     required this.description,
