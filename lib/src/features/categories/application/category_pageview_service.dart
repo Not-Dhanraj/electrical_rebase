@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 class PageOffset extends Notifier<double?> {
   @override
   double build() {
-    return 0;
+    return 2;
   }
 
   void changePageOffset(double? offset) {

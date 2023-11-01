@@ -1,21 +1,16 @@
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:electrical_project/src/features/categories/data/card_data.dart';
 import 'package:electrical_project/src/shared/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 
 class CategoryList extends StatelessWidget {
-  final String heroTag;
-  final String name;
-  final String descriptions;
-  final String thumb;
+  final int index;
   final Alignment alignment;
 
   const CategoryList({
     Key? key,
     required this.alignment,
-    required this.heroTag,
-    required this.name,
-    required this.thumb,
-    required this.descriptions,
+    required this.index,
   }) : super(key: key);
 
   @override
@@ -23,7 +18,7 @@ class CategoryList extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.only(bottom: 115),
       child: Hero(
-        tag: heroTag,
+        tag: cardsToDisplay.elementAt(index),
         child: Material(
           type: MaterialType.transparency,
           child: BouncingWidget(
@@ -49,7 +44,8 @@ class CategoryList extends StatelessWidget {
                       width: double.infinity,
                       child: CachedNetworkImage(
                         memCacheHeight: 480,
-                        imageUrl: thumb,
+                        imageUrl:
+                            cardsToDisplay.elementAt(index).backdropAssetPath,
                         fit: BoxFit.cover,
                         alignment: alignment,
                         errorWidget: (context, url, error) {
@@ -73,7 +69,7 @@ class CategoryList extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Positioned(
+                  Positioned.fill(
                     bottom: 0,
                     child: AnimatedOpacity(
                       opacity: 1,
@@ -84,21 +80,24 @@ class CategoryList extends StatelessWidget {
                         alignment: Alignment.bottomLeft,
                         child: Padding(
                           padding: const EdgeInsets.only(
-                              left: 30, right: 17, bottom: 20, top: 0),
+                              left: 18, right: 17, bottom: 18, top: 0),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
+                            mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Text(
-                                name,
+                                cardsToDisplay.elementAt(index).address,
                                 style: const TextStyle(
                                   fontSize: 25.0,
+                                  color: Colors.white,
                                 ),
                               ),
                               Text(
-                                descriptions,
+                                cardsToDisplay.elementAt(index).description,
+                                maxLines: 3,
+                                overflow: TextOverflow.ellipsis,
                                 style: const TextStyle(
-                                  fontSize: 15.0,
-                                ),
+                                    fontSize: 13.0, color: Colors.white),
                               ),
                             ],
                           ),

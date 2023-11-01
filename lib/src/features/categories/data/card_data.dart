@@ -4,14 +4,6 @@ final List<CardViewModel> cardsToDisplay = [
   CardViewModel(
     backdropAssetPath:
         'https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1518270500.1698710400&semt=sph',
-    address: 'AI HELPBOT',
-    capitol: '',
-    description:
-        '\nAsk Anything Regarding Electrical, Other type of Questions are Not Allowed :)',
-  ),
-  CardViewModel(
-    backdropAssetPath:
-        'https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1518270500.1698710400&semt=sph',
     address: 'PARALLEL RESISTANCE CALC.',
     capitol: '',
     description: '\nCalculate Resistances Which are Connected in Parallel',
@@ -22,6 +14,14 @@ final List<CardViewModel> cardsToDisplay = [
     address: 'SERIES RESISTANCE CALC.',
     capitol: '',
     description: '\nCalculate Resistances Which are Connected in Series',
+  ),
+  CardViewModel(
+    backdropAssetPath:
+        'https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg?size=626&ext=jpg&ga=GA1.1.1518270500.1698710400&semt=sph',
+    address: 'AI HELPBOT',
+    capitol: '',
+    description:
+        '\nAsk Anything Regarding Electrical, Other type of Questions are Not Allowed :)',
   ),
   CardViewModel(
     backdropAssetPath:
