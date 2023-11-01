@@ -13,8 +13,8 @@ class StarToDelta extends Notifier<StarToDeltaModel> {
     double r3 = 0.0;
     double productSum = ra * rb + rb * rc + rc * ra;
     r1 = (productSum) / rc;
-    r2 = (productSum) / ra;
-    r3 = (productSum) / rb;
+    r2 = (productSum) / rb;
+    r3 = (productSum) / ra;
 
     state = StarToDeltaModel(
         r1S: r1.toStringAsFixed(3),

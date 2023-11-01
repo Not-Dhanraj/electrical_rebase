@@ -10,8 +10,8 @@ class DeltaToStar extends Notifier<DeltaToStarModel> {
   void deltaToStar(double r1, double r2, double r3) {
     double sum = r1 + r2 + r3;
     var ra = (r1 * r2) / sum;
-    var rb = (r2 * r3) / sum;
-    var rc = (r3 * r1) / sum;
+    var rb = (r1 * r3) / sum;
+    var rc = (r3 * r2) / sum;
 
     state = DeltaToStarModel(
         raS: ra.toStringAsFixed(3),
