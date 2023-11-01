@@ -1,10 +1,12 @@
 import 'package:electrical_project/src/app.dart';
 import 'package:electrical_project/src/optional_web.dart';
+import 'package:electrical_project/src/utilities/scroll_fix.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'dart:io' show Platform;
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -17,6 +19,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Electrical Proj.',
+      scrollBehavior:
+          Platform.isAndroid || Platform.isIOS ? null : AppScrollBehavior(),
       theme: FlexThemeData.light(
         scheme: FlexScheme.deepPurple,
         surfaceMode: FlexSurfaceMode.highScaffoldLevelSurface,
