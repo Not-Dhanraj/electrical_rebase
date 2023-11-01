@@ -1,5 +1,6 @@
 import 'package:electrical_project/src/constants/app_consts.dart';
 import 'package:electrical_project/src/features/chatbot/data/chat_provider.dart';
+import 'package:electrical_project/src/features/chatbot/presentation/empty_chat_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -43,11 +44,7 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
         : Colors.blueGrey.withOpacity(0.5);
     return Scaffold(
       appBar: AppBar(
-        title: Hero(
-          flightShuttleBuilder: _flightShuttleBuilder,
-          tag: widget.title,
-          child: Text(widget.title),
-        ),
+        title: const Text('AI Helpbot'),
       ),
       body: Stack(
         fit: StackFit.expand,
@@ -55,150 +52,119 @@ class _ChatScreenState extends ConsumerState<ChatScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: AnimatedSwitcher(
-              duration: const Duration(milliseconds: 600),
-              child: chatData.question.isNotEmpty
-                  ? SingleChildScrollView(
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          const SizedBox(height: 16),
-                          AnimatedContainer(
-                            duration: const Duration(milliseconds: 300),
-                            padding: const EdgeInsets.all(8),
-                            decoration: BoxDecoration(
-                              color: questionBackground,
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            child: (chatData.question.isNotEmpty)
-                                ? Row(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: const EdgeInsets.only(top: 10),
-                                        child: SizedBox(
-                                            height: 40,
-                                            width: 40,
-                                            child:
-                                                Image.asset('assets/user.png')),
-                                      ),
-                                      Expanded(
-                                        child: Markdown(
-                                          data: chatData.question,
-                                          shrinkWrap: true,
-                                          selectable: true,
-                                          styleSheet: MarkdownStyleSheet
-                                                  .fromTheme(Theme.of(context))
-                                              .copyWith(textScaleFactor: 1.3),
-                                          physics: const ScrollPhysics(),
-                                        ),
-                                      ),
-                                    ],
-                                  )
-                                : null,
-                          ),
-                          const SizedBox(height: 16),
-                          AnimatedSwitcher(
-                            duration: const Duration(milliseconds: 300),
-                            child: (chatData.isFetching)
-                                ? const CircularProgressIndicator()
-                                : null,
-                          ),
-                          AnimatedSwitcher(
-                            duration: const Duration(milliseconds: 300),
-                            child: chatData.answer.isNotEmpty
-                                ? Container(
-                                    padding: const EdgeInsets.all(8),
-                                    decoration: BoxDecoration(
-                                        color: answerBackground,
-                                        borderRadius:
-                                            BorderRadius.circular(10)),
-                                    child: Row(
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 25),
-                                          child: SizedBox(
-                                              height: 40,
-                                              width: 40,
-                                              child: Image.asset(
-                                                  'assets/bot.png')),
-                                        ),
-                                        Expanded(
-                                          child: Markdown(
-                                            data: chatData.answer,
-                                            shrinkWrap: true,
-                                            selectable: true,
-                                            styleSheet:
-                                                MarkdownStyleSheet.fromTheme(
-                                                        Theme.of(context))
+                duration: const Duration(milliseconds: 600),
+                child: chatData.question.isNotEmpty
+                    ? Align(
+                        alignment: Alignment.topCenter,
+                        child: SingleChildScrollView(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const SizedBox(height: 16),
+                              AnimatedContainer(
+                                duration: const Duration(milliseconds: 300),
+                                padding: const EdgeInsets.all(8),
+                                decoration: BoxDecoration(
+                                  color: questionBackground,
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                child: (chatData.question.isNotEmpty)
+                                    ? Row(
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                const EdgeInsets.only(top: 10),
+                                            child: SizedBox(
+                                                height: 40,
+                                                width: 40,
+                                                child: Image.asset(
+                                                    'assets/user.png')),
+                                          ),
+                                          Expanded(
+                                            child: Markdown(
+                                              data: chatData.question,
+                                              shrinkWrap: true,
+                                              selectable: true,
+                                              styleSheet:
+                                                  MarkdownStyleSheet.fromTheme(
+                                                          Theme.of(context))
+                                                      .copyWith(
+                                                          textScaleFactor: 1.3),
+                                              physics: const ScrollPhysics(),
+                                            ),
+                                          ),
+                                        ],
+                                      )
+                                    : null,
+                              ),
+                              const SizedBox(height: 16),
+                              AnimatedSwitcher(
+                                duration: const Duration(milliseconds: 300),
+                                child: (chatData.isFetching)
+                                    ? const CircularProgressIndicator()
+                                    : null,
+                              ),
+                              AnimatedSwitcher(
+                                duration: const Duration(milliseconds: 300),
+                                child: chatData.answer.isNotEmpty
+                                    ? Container(
+                                        padding: const EdgeInsets.all(8),
+                                        decoration: BoxDecoration(
+                                            color: answerBackground,
+                                            borderRadius:
+                                                BorderRadius.circular(10)),
+                                        child: Row(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  top: 25),
+                                              child: SizedBox(
+                                                  height: 40,
+                                                  width: 40,
+                                                  child: Image.asset(
+                                                      'assets/bot.png')),
+                                            ),
+                                            Expanded(
+                                              child: Markdown(
+                                                data: chatData.answer,
+                                                shrinkWrap: true,
+                                                selectable: true,
+                                                styleSheet: MarkdownStyleSheet
+                                                        .fromTheme(
+                                                            Theme.of(context))
                                                     .copyWith(
                                                         textScaleFactor: 1.1),
-                                            physics: const ScrollPhysics(),
-                                          ),
+                                                physics: const ScrollPhysics(),
+                                              ),
+                                            ),
+                                          ],
                                         ),
-                                      ],
-                                    ),
-                                  )
-                                : null,
-                          ),
-                          const SizedBox(
-                            height: 95,
-                          ),
-                        ],
-                      ),
-                    )
-                  : Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          height: 400,
-                          child: Image.asset(
-                            'assets/bot.png',
-                            fit: BoxFit.cover,
-                            frameBuilder:
-                                (ctx, child, frame, wasSynchronouslyLoaded) {
-                              if (wasSynchronouslyLoaded) return child;
-
-                              return Stack(children: <Widget>[
-                                AnimatedOpacity(
-                                  opacity: frame == null ? 1 : 0,
-                                  duration: const Duration(seconds: 1),
-                                  child: frame == null
-                                      ? Image.asset(
-                                          'assets/bot.png',
-                                        )
-                                      : null,
-                                ),
-                                AnimatedOpacity(
-                                    opacity: frame == null ? 0 : 1,
-                                    duration: const Duration(seconds: 1),
-                                    child: frame != null ? child : null),
-                              ]);
-                            },
+                                      )
+                                    : null,
+                              ),
+                              const SizedBox(
+                                height: 95,
+                              ),
+                            ],
                           ),
                         ),
-                        Text(
-                          'Ask Anything Regarding Electrical :)',
-                          textAlign: TextAlign.center,
-                          style: Theme.of(context).textTheme.headlineMedium!,
-                        ),
-                      ],
-                    ),
-            ),
+                      )
+                    : const EmptyChatPage()),
           ),
           Positioned(
             bottom: 0,
             child: Container(
               margin: const EdgeInsets.symmetric(
                 horizontal: 23,
-                vertical: 10,
+                vertical: 15,
               ),
               padding: const EdgeInsets.symmetric(
-                horizontal: 8,
-                vertical: 8,
+                horizontal: 10,
+                vertical: 10,
               ),
               decoration: BoxDecoration(
                 // color: Colors.red,

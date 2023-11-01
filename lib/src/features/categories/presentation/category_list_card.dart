@@ -26,8 +26,8 @@ class CategoryList extends StatelessWidget {
           child: BouncingWidget(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (cxt) {
-                return ChatScreen(
-                  title: electricalKeywords.elementAt(index),
+                return const ChatScreen(
+                  title: 'electricalKeywords.elementAt(index)',
                 );
               }));
 
