@@ -50,6 +50,13 @@ class MyApp extends StatelessWidget {
           popupMenuOpacity: 0.95,
         ),
       ).copyWith(
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30),
+            borderSide: BorderSide.none,
+          ),
+        ),
         bottomSheetTheme: const BottomSheetThemeData(
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,
@@ -90,6 +97,13 @@ class MyApp extends StatelessWidget {
           popupMenuOpacity: 0.95,
         ),
       ).copyWith(
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(30),
+            borderSide: BorderSide.none,
+          ),
+        ),
         bottomSheetTheme: const BottomSheetThemeData(
           backgroundColor: Colors.transparent,
           shadowColor: Colors.transparent,

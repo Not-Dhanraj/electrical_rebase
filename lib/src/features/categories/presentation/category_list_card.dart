@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:electrical_project/src/features/categories/data/card_data.dart';
+import 'package:electrical_project/src/features/parallel/presentation/parallel_rest_page.dart';
 import 'package:electrical_project/src/shared/bouncing_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -23,6 +24,10 @@ class CategoryList extends StatelessWidget {
           type: MaterialType.transparency,
           child: BouncingWidget(
             onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (cxt) {
+                return const ParallelResistanceCalc();
+              }));
+
               //TODO
             },
             child: Card(
