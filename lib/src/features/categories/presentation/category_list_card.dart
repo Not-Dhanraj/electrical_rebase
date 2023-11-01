@@ -1,9 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:electrical_project/src/features/categories/data/card_data.dart';
-import 'package:electrical_project/src/features/chatbot/data/word_lists.dart';
-import 'package:electrical_project/src/features/chatbot/presentation/chat_page.dart';
+import 'package:electrical_project/src/routing/app_router.dart';
 import 'package:electrical_project/src/shared/bouncing_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class CategoryList extends StatelessWidget {
   final int index;
@@ -25,13 +25,15 @@ class CategoryList extends StatelessWidget {
           type: MaterialType.transparency,
           child: BouncingWidget(
             onTap: () {
-              Navigator.push(context, MaterialPageRoute(builder: (cxt) {
-                return const ChatScreen(
-                  title: 'electricalKeywords.elementAt(index)',
-                );
-              }));
-
-              //TODO
+              index == 0
+                  ? context.pushNamed(AppRoute.parallel.name)
+                  : index == 1
+                      ? context.pushNamed(AppRoute.series.name)
+                      : index == 2
+                          ? context.pushNamed(AppRoute.chathelpbot.name)
+                          : index == 3
+                              ? context.pushNamed(AppRoute.deltaStar.name)
+                              : context.pushNamed(AppRoute.starDelta.name);
             },
             child: Card(
               elevation: 0,

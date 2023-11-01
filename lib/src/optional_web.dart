@@ -1,5 +1,7 @@
 import 'package:electrical_project/src/app.dart';
+import 'package:electrical_project/src/routing/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class HabibiPage extends StatefulWidget {
   const HabibiPage({super.key});
@@ -46,12 +48,7 @@ class _HabibiPageState extends State<HabibiPage> {
             ElevatedButton(
               onPressed: () {
                 if (habibiController.text.toLowerCase() == "wallah habibi") {
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SelectionScreen(),
-                    ),
-                  );
+                  context.replaceNamed(AppRoute.selector.name);
                 } else {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(

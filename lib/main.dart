@@ -1,14 +1,20 @@
 import 'package:electrical_project/src/app.dart';
 import 'package:electrical_project/src/optional_web.dart';
+import 'package:electrical_project/src/routing/app_router.dart';
 import 'package:electrical_project/src/utilities/scroll_fix.dart';
 import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'dart:io' show Platform;
+// ignore: depend_on_referenced_packages
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  usePathUrlStrategy();
+  GoRouter.optionURLReflectsImperativeAPIs = true;
   runApp(const ProviderScope(child: MyApp()));
 }
 
@@ -17,10 +23,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: goRouter,
       title: 'Electrical Proj.',
-      scrollBehavior:
-          Platform.isAndroid || Platform.isIOS ? null : AppScrollBehavior(),
+      scrollBehavior: AppScrollBehavior(),
       theme: FlexThemeData.light(
         scheme: FlexScheme.deepPurple,
         surfaceMode: FlexSurfaceMode.highScaffoldLevelSurface,
@@ -118,7 +124,6 @@ class MyApp extends StatelessWidget {
         ),
       ),
       themeMode: ThemeMode.system,
-      home: !kIsWeb ? const SelectionScreen() : const HabibiPage(),
     );
   }
 }
