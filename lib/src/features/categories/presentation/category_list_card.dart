@@ -82,7 +82,7 @@ class CategoryList extends ConsumerWidget {
                         gradient: LinearGradient(
                           transform: const GradientRotation(-90),
                           colors: [
-                            Colors.black.withOpacity(0.3),
+                            Colors.black.withOpacity(0.5),
                             Colors.transparent
                           ],
                         ),
