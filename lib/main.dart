@@ -56,6 +56,7 @@ class MyApp extends StatelessWidget {
             borderRadius: BorderRadius.circular(30),
             borderSide: BorderSide.none,
           ),
+          contentPadding: const EdgeInsets.all(18),
         ),
         bottomSheetTheme: const BottomSheetThemeData(
           backgroundColor: Colors.transparent,
@@ -99,6 +100,7 @@ class MyApp extends StatelessWidget {
       ).copyWith(
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
+          contentPadding: const EdgeInsets.all(18),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(30),
             borderSide: BorderSide.none,
