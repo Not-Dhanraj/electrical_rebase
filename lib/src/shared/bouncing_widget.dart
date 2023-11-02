@@ -2,9 +2,6 @@ import 'package:flutter/material.dart';
 
 class BouncingWidget extends StatefulWidget {
   final VoidCallback? onTap;
-  final void Function(TapUpDetails)? onTapUp;
-  final void Function(TapDownDetails)? onTapDown;
-  final VoidCallback? onTapCancel;
   final double scaleFactor;
   final Duration? duration;
   final Widget child;
@@ -13,10 +10,7 @@ class BouncingWidget extends StatefulWidget {
     Key? key,
     required this.onTap,
     required this.child,
-    this.onTapUp,
     this.duration,
-    this.onTapDown,
-    this.onTapCancel,
     this.scaleFactor = 0.8,
   })  : assert(
           scaleFactor >= 0.0 && scaleFactor <= 1.0,
@@ -65,17 +59,14 @@ class _BouncingWidgetState extends State<BouncingWidget>
   }
 
   void _onTapUp(TapUpDetails details) {
-    if (widget.onTapUp != null) widget.onTapUp!(details);
     _controller.forward();
   }
 
   void _onTapDown(TapDownDetails details) {
-    if (widget.onTapDown != null) widget.onTapDown!(details);
     _controller.reverse();
   }
 
   void _onTapCancel() {
-    if (widget.onTapCancel != null) widget.onTapCancel!();
     _controller.forward();
   }
 

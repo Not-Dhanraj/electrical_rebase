@@ -1,5 +1,7 @@
 import 'package:electrical_project/src/features/categories/presentation/categories_page.dart';
+import 'package:electrical_project/src/routing/app_router.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SelectionScreen extends StatefulWidget {
   const SelectionScreen({super.key});
@@ -21,11 +23,7 @@ class _SelectionScreenState extends State<SelectionScreen> {
           IconButton(
             icon: const Icon(Icons.info),
             onPressed: () {
-              showModalBottomSheet(
-                  context: context,
-                  builder: (_) {
-                    return const Card();
-                  });
+              context.pushNamed(AppRoute.aboutUs.name);
             },
           ),
         ],

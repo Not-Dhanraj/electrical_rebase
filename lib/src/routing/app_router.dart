@@ -4,6 +4,7 @@ import 'package:electrical_project/src/features/delta_star/presentation/delta_to
 import 'package:electrical_project/src/features/parallel/presentation/parallel_rest_page.dart';
 import 'package:electrical_project/src/features/series/presentation/series_rest_page.dart';
 import 'package:electrical_project/src/optional_web.dart';
+import 'package:electrical_project/src/others/about_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -16,6 +17,7 @@ enum AppRoute {
   chathelpbot,
   deltaStar,
   starDelta,
+  aboutUs
 }
 
 final goRouter = GoRouter(
@@ -80,6 +82,15 @@ final goRouter = GoRouter(
           pageBuilder: (context, state) {
             return const MaterialPage(
               child: DeltaToStarConverter(),
+            );
+          },
+        ),
+        GoRoute(
+          path: 'AboutUs',
+          name: AppRoute.aboutUs.name,
+          pageBuilder: (context, state) {
+            return const MaterialPage(
+              child: AboutPage(),
             );
           },
         ),
