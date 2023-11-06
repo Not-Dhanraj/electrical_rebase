@@ -1,6 +1,6 @@
 # Electrical Project
 
-Welcome to the Electrical Project! This cross-platform application is built using Flutter and Dart, following a Feature-first structure.
+Welcome to my Electrical Project ! This cross-platform application is built using Flutter and Dart, following a Feature-first structure.
 
 ## Features
 
@@ -31,7 +31,6 @@ Welcome to the Electrical Project! This cross-platform application is built usin
 - The UI is designed with Material Design principles in mind, making use of themes, responsive layouts and smooth animations.
 
 ## Getting Started
- To get started with the Electrical Project, follow these steps:
 
 ### Prerequisites
 
@@ -50,7 +49,6 @@ String apiKey = 'YOUR API KEY HERE';
 String endPoint1 = 'YOUR CHATBOT FALLBACK ENDPOINT HERE';
 String apiKey1 = 'YOUR CHATBOT FALLBACK API KEY HERE';
 ```
-
 
 ### Running the app locally
 
