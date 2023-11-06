@@ -1,6 +1,7 @@
 # Electrical Project
 
 Welcome to my Electrical Project ! This cross-platform application is built using Flutter and Dart, following a Feature-first structure.
+
 ![SHOWCASE](https://github.com/Not-Dhanraj/electrical_rebase/assets/80586983/444962df-fdb5-44f3-baf1-74bbe0fa045f)
 
 ## Features
@@ -62,8 +63,6 @@ String apiKey1 = 'YOUR CHATBOT FALLBACK API KEY HERE';
 3. **Run the app:**
    ```shell
    flutter run
-
-
 ## Usage
 
 Once the app is running, you can explore its various features, including the AI chatbot, resistance calculations, and delta to star conversions. Feel free to reach out to us for any questions or assistance.
