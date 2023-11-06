@@ -1,6 +1,7 @@
 # Electrical Project
 
 Welcome to my Electrical Project ! This cross-platform application is built using Flutter and Dart, following a Feature-first structure.
+![SHOWCASE](https://github.com/Not-Dhanraj/electrical_rebase/assets/80586983/444962df-fdb5-44f3-baf1-74bbe0fa045f)
 
 ## Features
 
@@ -84,3 +85,5 @@ This project is licensed under the MIT License. For more information, see the [L
 ## Contact
 
 If you have any questions or need further assistance, please feel free to contact us at [BerserkDhanraj@proton.me](mailto:BerserkDhanraj@proton.me).
+
+Image by <a href="https://www.freepik.com/">Freepik</a>
