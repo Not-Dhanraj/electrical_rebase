@@ -63,3 +63,26 @@ String apiKey1 = 'YOUR CHATBOT FALLBACK API KEY HERE';
 3. **Run the app:**
    ```shell
    flutter run
+
+
+## Usage
+
+Once the app is running, you can explore its various features, including the AI chatbot, resistance calculations, and delta to star conversions. Feel free to reach out to us for any questions or assistance.
+
+## Contributing
+
+I welcome contributions to make this project even better. If you'd like to contribute, please follow these guidelines:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and submit a pull request.
+
+I appreciate your help in improving this project!
+
+## License
+
+This project is licensed under the MIT License. For more information, see the [LICENSE](LICENSE) file.
+
+## Contact
+
+If you have any questions or need further assistance, please feel free to contact us at [BerserkDhanraj@proton.me](mailto:BerserkDhanraj@proton.me).
