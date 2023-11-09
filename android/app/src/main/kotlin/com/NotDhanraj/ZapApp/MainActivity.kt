@@ -1,4 +1,4 @@
-package com.example.electrical_project
+package com.NotDhanraj.ZapApp
 
 import io.flutter.embedding.android.FlutterActivity
 
