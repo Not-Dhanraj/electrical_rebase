@@ -19,6 +19,76 @@ class AboutPage extends StatelessWidget {
         ),
         children: [
           h4,
+          Card(
+            color: Colors.transparent,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+              side: BorderSide(
+                  color: Theme.of(context).colorScheme.secondary, width: 2),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Column(
+                children: [
+                  AspectRatio(
+                    aspectRatio: 4.5 / 2,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: Stack(
+                        fit: StackFit.expand,
+                        children: [
+                          Positioned.fill(
+                            child: AnimatedOpacity(
+                              duration: Duration.zero,
+                              opacity: 0.5,
+                              child: Container(
+                                color: Theme.of(context)
+                                    .primaryColor
+                                    .withOpacity(0.5),
+                              ),
+                            ),
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              SizedBox(
+                                  width:
+                                      MediaQuery.of(context).size.width * 0.25,
+                                  child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(12),
+                                      child:
+                                          Image.asset('assets/icon/icon.png'))),
+                              const Flexible(
+                                child: FittedBox(
+                                  fit: BoxFit.fitWidth,
+                                  child: Text(
+                                    "ZapApp",
+                                    style: TextStyle(
+                                        fontSize: 40,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 2,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 15, right: 15, top: 8),
+                    child: Text(
+                        'Welcome to my Electrical Project!! \nThis is cross-platform application built using Flutter and Dart!'),
+                  ),
+                ],
+              ),
+            ),
+          ),
+          h4,
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5),
             child: Text(
