@@ -38,6 +38,7 @@ dependencies:
   go_router: ^12.0.1
   google_fonts: ^6.1.0
   http: ^1.1.0
+  icons_launcher: ^2.1.5
   unicons: ^2.1.1
   url_launcher: ^6.2.1
 
@@ -46,6 +47,25 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
+
+icons_launcher:
+  image_path: "assets/icon/icon.png"
+  platforms:
+    android:
+      enable: true
+      image_path: "assets/icon/icon.png"
+      # adaptive_background_color: "#757068"
+      adaptive_background_image: "assets/icon/bg.png"
+      adaptive_foreground_image: "assets/icon/fg.png"
+    web:
+      enable: true
+      image_path: "assets/icon/icon.png"
+    linux:
+      enable: true
+      image_path: "assets/icon/icon.png"
+    ios:
+      enable: true
+      image_path: "assets/icon/icon.png"
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 # The following section is specific to Flutter packages.
