@@ -42,50 +42,50 @@ class AboutPage extends StatelessWidget {
                 github: 'https://github.com/Not-Dhanraj'),
           ),
           h4,
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5),
-            child: Text(
-              'Group Members',
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-          ),
-          h4,
-          const AboutTile(
-              top: Radius.circular(25),
-              bottom: Radius.circular(5),
-              imgUrl:
-                  'https://pbs.twimg.com/profile_images/1616528643957878784/q9uhNCWn_400x400.jpg',
-              title: 'Dhanraj Priyadarshi',
-              description:
-                  'I am a student and I love programming and building things! :)',
-              twitter: 'https://twitter.com/BerserkDhanraj',
-              linkedin:
-                  'https://in.linkedin.com/in/dhanraj-priyadarshi-7739a8286',
-              github: 'https://github.com/Not-Dhanraj'),
-          const AboutTile(
-              top: Radius.circular(5),
-              bottom: Radius.circular(5),
-              imgUrl:
-                  'https://pbs.twimg.com/profile_images/1616528643957878784/q9uhNCWn_400x400.jpg',
-              title: 'Dhanraj Priyadarshi',
-              description:
-                  'I am a student and I love programming and building things! :)',
-              twitter: 'https://twitter.com/BerserkDhanraj',
-              linkedin:
-                  'https://in.linkedin.com/in/dhanraj-priyadarshi-7739a8286',
-              github: 'https://github.com/Not-Dhanraj'),
-          const AboutTile(
-              top: Radius.circular(5),
-              bottom: Radius.circular(25),
-              imgUrl:
-                  'https://pbs.twimg.com/profile_images/1616528643957878784/q9uhNCWn_400x400.jpg',
-              title: 'Dhanraj Priyadarshi',
-              description:
-                  'I am a student and I love programming and building things! :)',
-              twitter: 'https://twitter.com/BerserkDhanraj',
-              linkedin:
-                  'https://in.linkedin.com/in/dhanraj-priyadarshi-7739a8286',
-              github: 'https://github.com/Not-Dhanraj'),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(horizontal: 5),
+          //   child: Text(
+          //     'Group Members',
+          //     style: Theme.of(context).textTheme.titleLarge,
+          //   ),
+          // ),
+          // h4,
+          // const AboutTile(
+          //     top: Radius.circular(25),
+          //     bottom: Radius.circular(5),
+          //     imgUrl:
+          //         'https://pbs.twimg.com/profile_images/1616528643957878784/q9uhNCWn_400x400.jpg',
+          //     title: 'Dhanraj Priyadarshi',
+          //     description:
+          //         'I am a student and I love programming and building things! :)',
+          //     twitter: 'https://twitter.com/BerserkDhanraj',
+          //     linkedin:
+          //         'https://in.linkedin.com/in/dhanraj-priyadarshi-7739a8286',
+          //     github: 'https://github.com/Not-Dhanraj'),
+          // const AboutTile(
+          //     top: Radius.circular(5),
+          //     bottom: Radius.circular(5),
+          //     imgUrl:
+          //         'https://pbs.twimg.com/profile_images/1616528643957878784/q9uhNCWn_400x400.jpg',
+          //     title: 'Dhanraj Priyadarshi',
+          //     description:
+          //         'I am a student and I love programming and building things! :)',
+          //     twitter: 'https://twitter.com/BerserkDhanraj',
+          //     linkedin:
+          //         'https://in.linkedin.com/in/dhanraj-priyadarshi-7739a8286',
+          //     github: 'https://github.com/Not-Dhanraj'),
+          // const AboutTile(
+          //     top: Radius.circular(5),
+          //     bottom: Radius.circular(25),
+          //     imgUrl:
+          //         'https://pbs.twimg.com/profile_images/1616528643957878784/q9uhNCWn_400x400.jpg',
+          //     title: 'Dhanraj Priyadarshi',
+          //     description:
+          //         'I am a student and I love programming and building things! :)',
+          //     twitter: 'https://twitter.com/BerserkDhanraj',
+          //     linkedin:
+          //         'https://in.linkedin.com/in/dhanraj-priyadarshi-7739a8286',
+          //     github: 'https://github.com/Not-Dhanraj'),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
             child: Text(
@@ -96,6 +96,15 @@ class AboutPage extends StatelessWidget {
           BouncingWidget(
             onTap: () {
               showLicensePage(
+                applicationIcon: Padding(
+                  padding: EdgeInsets.symmetric(
+                    vertical: 15,
+                    horizontal: MediaQuery.of(context).size.width * 0.18,
+                  ),
+                  child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16),
+                      child: Image.asset('assets/icon/icon.png')),
+                ),
                 context: context,
                 applicationName: 'Electrical Project',
                 applicationVersion: '1.0.22',
@@ -113,7 +122,7 @@ class AboutPage extends StatelessWidget {
           ),
           h10,
           Text(
-            'Made with ❤️ by G4 with Flutter!',
+            'Made with ❤️ by Dhanraj with Flutter!',
             textAlign: TextAlign.center,
             style: Theme.of(context).textTheme.titleMedium,
           ),
