@@ -116,7 +116,7 @@ The question is "$question"''';
 
   Future<String> requestHttp(String url, String apiKey, String question) async {
     Map<String, dynamic> data = {
-      'model': 'gpt-4',
+      'model': 'gpt-3.5-turbo',
       'messages': [
         {
           'role': 'user',
